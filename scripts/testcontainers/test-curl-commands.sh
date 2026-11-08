@@ -8,6 +8,8 @@ echo "API_GATEWAY_SERVICE_CONTAINER=$API_GATEWAY_SERVICE_CONTAINER"
 
 API_GATEWAY_SERVICE_PORT=$(docker port "$API_GATEWAY_SERVICE_CONTAINER" 8080 | cut -d':' -f2)
 
+cd "$(dirname "$0")/../.."
+
 FILE_PATH="end-to-end-tests/src/endToEndTest/resources/templates/index.html"
 
 awk '
